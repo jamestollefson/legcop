@@ -1,0 +1,6 @@
+README.md
+setup.py
+legcop_james.l.tollefson.egg-info/PKG-INFO
+legcop_james.l.tollefson.egg-info/SOURCES.txt
+legcop_james.l.tollefson.egg-info/dependency_links.txt
+legcop_james.l.tollefson.egg-info/top_level.txt

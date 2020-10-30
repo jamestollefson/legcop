@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: legcop-james.l.tollefson
+Version: 0.0.1
+Summary: API utilities to access legislative information from across the 54 U.S. States and Territories
+Home-page: https://github.com/jamestollefson/legcop
+Author: James Tollefson
+Author-email: james.l.tollefson@alaskaupdate.com
+License: UNKNOWN
+Description: This package provides python libraries to interact with various APIs containing information
+        about legislative activity in the U.S. Congress and the 54 States & Territories.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
