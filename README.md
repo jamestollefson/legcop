@@ -136,7 +136,9 @@ This prints out the following for Alaska House Bill 1:
 bill_id: 1146445
 change_hash: 1b8cdc5d7c7e19020f3b215db7f2abed
 session_id: 1622
-session: {'session_id': 1622, 'session_name': '31st Legislature', 'session_title': '31st Legislature', 'year_start': 2019, 'year_end': 2020, 'special': 0}
+session: {'session_id': 1622, 'session_name': '31st Legislature', 
+        'session_title': '31st Legislature', 'year_start': 2019, 
+        'year_end': 2020, 'special': 0}
 url: https://legiscan.com/AK/bill/HB1/2019
 state_link: http://www.akleg.gov/basis/Bill/Detail/31?Root=HB1
 completed: 0
@@ -153,14 +155,39 @@ body_id: 13
 current_body: H
 current_body_id: 13
 title: License In-home Care Providers/agencies
-description: An Act relating to the Department of Health and Social Services; relating to in-home personal care services agencies; establishing the In-Home Personal Care Services Advisory Board; and providing for an effective date.
-committee: {'committee_id': 2134, 'chamber': 'H', 'chamber_id': 13, 'name': 'Health & Social Services'}
+description: An Act relating to the Department of Health and Social Services; 
+            relating to in-home personal care services agencies; establishing 
+            the In-Home Personal Care Services Advisory Board; and providing 
+            for an effective date.
+committee: {'committee_id': 2134, 'chamber': 'H', 'chamber_id': 13, 
+            'name': 'Health & Social Services'}
 pending_committee_id: 2134
-history: [{'date': '2019-02-20', 'action': 'PREFILE RELEASED 1/7/19', 'chamber': 'H', 'chamber_id': 13, 'importance': 0}, {'date': '2019-02-20', 'action': 'READ THE FIRST TIME - REFERRALS', 'chamber': 'H', 'chamber_id': 13, 'importance': 1}, {'date': '2019-02-20', 'action': 'HSS, L&C', 'chamber': 'H', 'chamber_id': 13, 'importance': 0}, {'date': '2019-02-20', 'action': 'REFERRED TO HEALTH & SOCIAL SERVICES', 'chamber': 'H', 'chamber_id': 13, 'importance': 1}]
-sponsors: [{'people_id': 19096, 'person_hash': 'q63acg3w', 'party_id': 2, 'party': 'R', 'role_id': 1, 'role': 'Rep', 'name': 'DeLena Johnson', 'first_name': 'DeLena', 'middle_name': 'M.', 'last_name': 'Johnson', 'suffix': '', 'nickname': '', 'district': 'HD-011', 'ftm_eid': 9405351, 'votesmart_id': 153695, 'opensecrets_id': '', 'knowwho_pid': 499617, 'ballotpedia': 'Delena_Johnson', 'sponsor_type_id': 1, 'sponsor_order': 1, 'committee_sponsor': 0, 'committee_id': '0'}]
+history: [{'date': '2019-02-20', 'action': 'PREFILE RELEASED 1/7/19', 
+            'chamber': 'H', 'chamber_id': 13, 'importance': 0}, 
+        {'date': '2019-02-20', 'action': 'READ THE FIRST TIME - REFERRALS', 
+            'chamber': 'H', 'chamber_id': 13, 'importance': 1}, 
+        {'date': '2019-02-20', 'action': 'HSS, L&C', 'chamber': 'H', 
+            'chamber_id': 13, 'importance': 0}, 
+        {'date': '2019-02-20', 'action': 'REFERRED TO HEALTH & SOCIAL SERVICES', 
+            'chamber': 'H', 'chamber_id': 13, 'importance': 1}]
+sponsors: [{'people_id': 19096, 'person_hash': 'q63acg3w', 'party_id': 2, 
+            'party': 'R', 'role_id': 1, 'role': 'Rep', 'name': 'DeLena Johnson', 
+            'first_name': 'DeLena', 'middle_name': 'M.', 'last_name': 'Johnson', 
+            'suffix': '', 'nickname': '', 'district': 'HD-011', 'ftm_eid': 9405351, 
+            'votesmart_id': 153695, 'opensecrets_id': '', 'knowwho_pid': 499617, 
+            'ballotpedia': 'Delena_Johnson', 'sponsor_type_id': 1, 
+            'sponsor_order': 1, 'committee_sponsor': 0, 'committee_id': '0'}]
 sasts: []
-subjects: [{'subject_id': 4508, 'subject_name': 'Disabilities'}, {'subject_id': 4478, 'subject_name': 'Licensing'}, {'subject_id': 4545, 'subject_name': 'Medical Care'}, {'subject_id': 4552, 'subject_name': 'Occupations & Professions'}, {'subject_id': 4481, 'subject_name': 'Senior Citizens'}]
-texts: [{'doc_id': 1844262, 'date': '2019-01-07', 'type': 'Introduced', 'type_id': 1, 'mime': 'application/pdf', 'mime_id': 2, 'url': 'https://legiscan.com/AK/text/HB1/id/1844262', 'state_link': 'http://www.akleg.gov/PDF/31/Bills/HB0001A.PDF', 'text_size': 497807}]
+subjects: [{'subject_id': 4508, 'subject_name': 'Disabilities'}, 
+           {'subject_id': 4478, 'subject_name': 'Licensing'}, 
+           {'subject_id': 4545, 'subject_name': 'Medical Care'}, 
+           {'subject_id': 4552, 'subject_name': 'Occupations & Professions'}, 
+           {'subject_id': 4481, 'subject_name': 'Senior Citizens'}]
+texts: [{'doc_id': 1844262, 'date': '2019-01-07', 'type': 'Introduced', 
+        'type_id': 1, 'mime': 'application/pdf', 'mime_id': 2, 
+        'url': 'https://legiscan.com/AK/text/HB1/id/1844262', 
+        'state_link': 'http://www.akleg.gov/PDF/31/Bills/HB0001A.PDF', 
+        'text_size': 497807}]
 votes: []
 amendments: []
 supplements: []
@@ -180,3 +207,13 @@ depending on which arguments you specify in the function call.
 ```python
 
 ```
+
+
+
+
+
+
+
+
+
+
