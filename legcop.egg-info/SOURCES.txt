@@ -1,0 +1,6 @@
+README.md
+setup.py
+legcop.egg-info/PKG-INFO
+legcop.egg-info/SOURCES.txt
+legcop.egg-info/dependency_links.txt
+legcop.egg-info/top_level.txt
