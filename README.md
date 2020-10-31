@@ -8,7 +8,9 @@ You can install legcop using `pip install legcop`
 ## Table of Contents
 
 1. [LEGISCAN](#legiscan)
-    a. [importing LegiScan](#import)
+    
+    1. [importing LegiScan](#import)
+
 2. [Example](#example)
 
 ## LEGISCAN
