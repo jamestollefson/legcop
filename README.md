@@ -12,7 +12,6 @@ You can install legcop using `pip install legcop`
     1. [Importing](#importing)
     2. [Methods](#methods)
 
-2. [Example](#example)
 
 ## LEGISCAN
 
@@ -305,17 +304,3 @@ It then returns a zipfile.Zipfile object. For more information about how to
 access/manipulate this object, refer to the zipfile docs:
     
 https://docs.python.org/3/library/zipfile.html#zipfile-objects
-
-## Example
-
- 
-
-
-
-
-
-
-
-
-
-
