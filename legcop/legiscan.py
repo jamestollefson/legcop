@@ -2,6 +2,8 @@ import requests
 import os
 import json
 import base64
+import zipfile
+import io
 
 
 class LegiScanError(Exception):
@@ -209,6 +211,59 @@ class LegiScan(object):
         """Retrieve a list of bills sponsored by an individual legislator"""
         url = self._url('getSponsoredList', {'id':people_id})
         return self._get(url)['sponsoredbills']['bills']
+    
+    def recode_zipfile(self, zipped_dataset):
+        """This function re-encodes the zipped dataset produced by the API to make
+        it human-readable. 
+        
+        It then returns a zipfile.Zipfile object. For more information about how to 
+        access/manipulate this object, refer to the zipfile docs:
+            
+        https://docs.python.org/3/library/zipfile.html#zipfile-objects
+        """
+            
+        if zipped_dataset['status'] == 'OK':
+            zipped_data = zipped_dataset['dataset']['zip']
+            
+        else:
+            raise LegiScanError('''Dataset status not OK. Try pulling the dataset 
+                    again using get_dataset(). To get a list of datasets for a 
+                    given state, use the get_dataset_list() method on a LegiScan 
+                    instance.
+                    
+                    get_dataset_list returns a list of datasets (makes sense, 
+                    right?). Once you identify the one you are interested in get,
+                    its access_key and session_id and pass them as arguments to 
+                    get_dataset().
+                    
+                    Here's an example:
+                        
+                    #instantiate LegiScan
+                    api_key = #Your API Key Here
+                    legis = LegiScan(api_key)
+                    datasetlist = legis.get_dataset_list(state='ak', year=2019)
+                    #get access_key and session_id from first list item
+                    access_key = datasetlist[0]['access_key']
+                    session_id = datasetlist[0]['session_id']
+                    
+                    #get dataset
+                    dataset = legis.get_dataset(session_id=session_id,
+                                                access_key=access_key)
+                    
+                    #check to make sure dataset status is 'OK'
+                    assert dataset['status'] == 'OK'
+                    
+                    #Now you can use recode_zipfile to make this readable
+                    readable = legis.recode_zipfile(dataset)
+                        ''')
+    
+        #re-encode
+        base64_bytes = zipped_data.encode('ascii')
+        message_bytes = base64.b64decode(base64_bytes)
+        
+        recoded_zipfile = zipfile.ZipFile(io.BytesIO(message_bytes))
+        
+        return recoded_zipfile
     
     def __str__(self):
         return '<LegiScan API key: {}'.format(self.key)
