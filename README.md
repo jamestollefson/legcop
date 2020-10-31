@@ -7,7 +7,9 @@ You can install legcop using `pip install legcop`
 
 ## Table of Contents
 
-1. [Example](#example)
+1. [LEGISCAN](#legiscan)
+    a. [importing LegiScan](#import)
+2. [Example](#example)
 
 ## LEGISCAN
 
@@ -19,6 +21,8 @@ https://legiscan.com/legiscan.
 
 To learn more about LegiScan's internal functionality you can always peruse the 
 user manual/documentation at https://legiscan.com/gaits/documentation/legiscan.
+
+#### import
 
 We interact with LegiScan using `LegiScan` objects.
 
