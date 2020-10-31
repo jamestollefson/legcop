@@ -3,7 +3,7 @@ import argparse
 import os
 import requests
 
-from legcop.legiscan import LegiScan, LegiScanError
+from legiscan import LegiScan, LegiScanError
 
 
 class LegiScanTestCase(unittest.TestCase):
