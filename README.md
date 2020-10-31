@@ -5,6 +5,10 @@ about legislative activity in the U.S. Congress and the 54 States & Territories.
 
 You can install legcop using `pip install legcop`
 
+## Table of Contents
+
+1. [Example](#example)
+
 ## LEGISCAN
 
 The LegiScan API provides access to the legislative activity of the U.S. State
@@ -199,14 +203,103 @@ to pull down an entire legislative session's dataset. legiscan.com provides
 convenient API calls to meet this need. For each of these, `LegiScan` provides 
 an associated function. 
 
+##### `get_session_list(state)`
+
+Get list of all available sessions for a state
+
 ##### `get_master_list(state=None, session_id=None)`
 
-This returns a list of all bills for either a state or a particular session, 
-depending on which arguments you specify in the function call.
+Get list of bills for the current session in a state or for a given session 
+identifier
 
-```python
+##### `get_bill(bill_id=None, state=None, bill_number=None)`
 
-```
+Get primary bill detail information including sponsors, committee references, 
+full history, bill text, and roll call information.
+
+This function expects either a bill identifier or a state and bill number 
+combination. The bill identifier is preferred, and required for fetching bills
+from prior sessions.
+
+
+##### `get_bill_text(bill_id, use_base64=False)`
+
+Get bill text, including date, draft revision information, and MIME type. 
+
+If `use_base64` is False (default) bill text is returned in ASCII for easy
+readability.
+
+Otherwise, text is base64 encoded to allow for PDF and Word 
+data transfers.
+
+##### `get_amendment(amendment_id)`
+
+Get amendment text including date, adoption status, MIME type, and 
+title/description information. Amendment text is encoded in base64 to allow for
+PDF and Word data transfers.
+ 
+##### `get_supplement(supplement_id)`
+
+Get supplement text including type of supplement, date, MIME type and text 
+description/information. Supplement text is base64 encoded to allow for PDF and 
+Word data transfer.
+
+##### `get_roll_call(roll_call_id)`
+
+Roll call detail for individual votes and summary information.
+
+##### `get_person(people_id)`
+
+Legislator information including name, role, and a followthemoney.org person 
+identifier.
+
+##### `search(state, bill_number=None, query=None, year=2, page=1)`
+
+Get a page of results for a search against the LegiScan full text engine; 
+returns a paginated result set.
+
+Specify a bill number or query string. Year can be an exact year or a number 
+between 1 and 4, inclusive. These integers have the following meanings:
+    1 = all years
+    2 = current year, the default
+    3 = recent years
+    4 = prior years
+Page is the result set page number to return
+
+##### `get_dataset_list(state=None, year=None)`
+
+Get a list of available datasets with optional filters
+
+##### `get_dataset(session_id = None, access_key=None)`
+
+Returns a single ZIP archive for the requested dataset containing all bills,
+votes, and people for the selected session.
+
+To get a list of available datasets use `get_dataset_list()`. Select an 
+`access_key` and `session_id` from the results to use an inputs for 
+`get_dataset()`.
+
+##### `get_session_people(session_id)`
+
+Retrieve a list of people records active in a specific session id
+
+##### `get_sponsored_list(people_id)`
+
+Retrieve a list of bills sponsored by an individual legislator
+
+##### `recode_zipfile(zipped_dataset)`
+
+This function re-encodes the zipped dataset produced by the API to make it 
+human-readable. 
+
+It then returns a zipfile.Zipfile object. For more information about how to 
+access/manipulate this object, refer to the zipfile docs:
+    
+https://docs.python.org/3/library/zipfile.html#zipfile-objects
+
+## Example
+
+ 
 
 
 

@@ -134,7 +134,7 @@ class LegiScan(object):
         """
         Get supplement text including type of supplement, date, MIME type
         and text description/information. Supplement text is base64 encoded 
-        to allow for PDF and Word data transfer.\
+        to allow for PDF and Word data transfer.
         """
         url = self._url('getSupplement', {'id':supplement_id})
         return self._get(url)['supplement']
