@@ -1,4 +1,4 @@
-#legcop (Legislature Common Operating Picture)
+# legcop (Legislature Common Operating Picture)
 
 ---
 
