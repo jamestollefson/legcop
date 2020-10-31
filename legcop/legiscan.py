@@ -10,15 +10,33 @@ class LegiScanError(Exception):
 class LegiScan(object):
     BASE_URL = 'https://api.legiscan.com/?key={}&op={}{}'
     
-    def __init__(self, apikey=None):
+    def __init__(self, apikey=None, mute=False):
         """LegiScan API. State parameters should always be passed as
         USPS abbreviations. Bill numbers and abbreviations are case insensitive.
         Register for API at https://legiscan.com/legiscan
         """
+        self.mute = mute
+        self.key = apikey
         #See if API key is available as environment variable
         if apikey is None:
-            apikey = os.environ['LEGISCAN_API_KEY']
-        self.key = apikey.strip()
+            try:
+                apikey = os.environ['LEGISCAN_API_KEY']
+                self.key = apikey.strip()
+            except:
+                self.key = ''
+                if self.mute == False:
+                    print(
+                        '''
+                        Object has been instantiated. However, you must provide 
+                        a valid LegiScan API key to use this object.
+    
+                        The API key for this object may be set by passing it as an 
+                        argument to the set_api_key() method on this object.
+                        
+                        To obtain an API key, visit https://legiscan.com/legiscan
+                        '''                    
+                        )
+        
         
     def _url(self, operation, params=None):
         """Build a URL for querying the API"""
@@ -36,6 +54,11 @@ class LegiScan(object):
         if data['status'] == 'ERROR':
             raise LegiScanError(data['alert']['message'])
         return data
+    
+    def set_api_key(self, key):
+        """allows user to set API key manually if not done during
+            instantiation or available as an environmental variable"""
+        self.key = key
     
     def get_session_list(self, state):
         """Get list of all available sessions for a state"""
