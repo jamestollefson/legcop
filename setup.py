@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
     
 setuptools.setup(
-    name = "legcop-james.l.tollefson",
+    name = "legcop",
     version = "0.0.1",
     author = "James Tollefson",
     author_email = "james.l.tollefson@alaskaupdate.com",
