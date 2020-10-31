@@ -9,7 +9,8 @@ You can install legcop using `pip install legcop`
 
 1. [LEGISCAN](#legiscan)
     
-    1. [importing LegiScan](#import)
+    1. [Importing](#importing)
+    2. [Methods](#methods)
 
 2. [Example](#example)
 
@@ -24,7 +25,7 @@ https://legiscan.com/legiscan.
 To learn more about LegiScan's internal functionality you can always peruse the 
 user manual/documentation at https://legiscan.com/gaits/documentation/legiscan.
 
-#### import
+#### Importing
 
 We interact with LegiScan using `LegiScan` objects.
 
@@ -203,6 +204,8 @@ amendments: []
 supplements: []
 calendar: []
 ```
+
+#### Methods
 
 It may be the case that you have a very specific item of interest and don't want
 to pull down an entire legislative session's dataset. legiscan.com provides
