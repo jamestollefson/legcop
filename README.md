@@ -22,7 +22,7 @@ user manual/documentation at https://legiscan.com/gaits/documentation/legiscan.
 
 We interact with LegiScan using `LegiScan` objects.
 
-```
+```json
 #import
 from legcop.legcop.legiscan import LegiScan
 
@@ -31,3 +31,21 @@ api_key = #YOUR API KEY HERE
 legis = LegiScan(api_key)
 
 ``` 
+
+The `LegiScan` object provides functions to interact with each of the API
+endpoints defined in the legiscan.com documentation. The best way to learn
+what the API offers is to simply start exploring. A good place to start is with
+the list of all available legislative sessions for a particular state.
+
+Let's take a look at what's available for Alaska. Bear in mind that LegiScan
+expects postal abbreviations for the state name, and therefore so does this
+package.
+
+```
+state = 'ak'
+sessions = legis.get_session_list(state=state)
+
+print(sessions)
+
+```
+
