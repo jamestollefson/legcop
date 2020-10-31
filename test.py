@@ -104,6 +104,16 @@ class LegiScanTestCase(unittest.TestCase):
     def test_get_dataset(self):
         """Check that result status is 'OK' for dataset known to exist in DB"""
         
+        datasetlist = self.legis.get_dataset_list(state='ak', year=2019)
+        #get access_key and session_id from first list item
+        access_key = datasetlist[0]['access_key']
+        session_id = datasetlist[0]['session_id']
+        
+        #get dataset
+        dataset = self.legis.get_dataset(session_id = session_id,
+                                         access_key = access_key)
+        self.assertEqual(dataset['status'], 'OK')
+        
         pass
             
      
