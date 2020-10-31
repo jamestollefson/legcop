@@ -79,6 +79,33 @@ class LegiScanTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.legis.get_bill_text()
             
+    def test_recode_zipfile(self):
+        """test that the Zipfile object returned by recode_zipfile() passes the
+        zipfile testzip() test"""
+        
+        datasetlist = self.legis.get_dataset_list(state='ak', year=2019)
+        #get access_key and session_id from first list item
+        access_key = datasetlist[0]['access_key']
+        session_id = datasetlist[0]['session_id']
+        
+        #get dataset
+        dataset = self.legis.get_dataset(session_id = session_id,
+                                         access_key = access_key)
+        
+        #Ensure dataset status is ok
+        assert dataset['status'] == 'OK'
+        
+        #pass dataset to recode_zipfile()
+        readable = self.legis.recode_zipfile(dataset)
+        
+        self.assertEqual(type(readable.testzip()), type(None))
+
+                    
+    def test_get_dataset(self):
+        """Check that result status is 'OK' for dataset known to exist in DB"""
+        
+        pass
+            
      
 if __name__ == '__main__':
     
