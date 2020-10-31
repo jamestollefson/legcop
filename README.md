@@ -7,9 +7,7 @@ You can install legcop using `pip install legcop`
 
 ## LEGISCAN
 
----
-
-The venerable LegiScan API provides access to the legislative activity of the U.S. State
+The LegiScan API provides access to the legislative activity of the U.S. State
 and Federal Legislatures. 
 
 Use of the LegiScan API requires an API key which you may obtain for free at 
@@ -39,7 +37,7 @@ Let's take a look at what's available for Alaska. Bear in mind that LegiScan
 expects postal abbreviations for the state name, and therefore so does this
 package.
 
-```
+```python
 state = 'ak'
 ak_sessions = legis.get_session_list(state=state)
 
@@ -77,7 +75,7 @@ associated datasets from the API.
 For this example we'll simply look at the most recent session, which is at index
 `0` in the `ak_sessions` list.
 
-```
+```python
 #get start year of most recent Alaska Legislature session
 start_most_recent_session = ak_sessions[0]['year_start']
 
@@ -93,7 +91,7 @@ session_id = datasetlist[0]['session_id']
 Now that we have the `access_key` and `session_id` for the legislative session
 we're interested in we can pull the full dataset from the API.
 
-```
+```python
 #pull dataset
 dataset = legis.get_dataset(session_id=session_id, access_key=access_key)
 
@@ -115,7 +113,7 @@ https://docs.python.org/3/library/zipfile.html.
 Here's an example of how to read the contents of one of the zipped files using
  `zipfile`.
 
-```
+```python
 #get list of all filenames in the dataset
 namelist = readable_dataset.namelist()
 
@@ -134,6 +132,6 @@ an associated function.
 This returns a list of all bills for either a state or a particular session, 
 depending on which arguments you specify in the function call.
 
-```
+```python
 
 ```
