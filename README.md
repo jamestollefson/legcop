@@ -199,7 +199,7 @@ to pull down an entire legislative session's dataset. legiscan.com provides
 convenient API calls to meet this need. For each of these, `LegiScan` provides 
 an associated function. 
 
-##### `get_master_list()`
+##### `get_master_list(state=None, session_id=None)`
 
 This returns a list of all bills for either a state or a particular session, 
 depending on which arguments you specify in the function call.
