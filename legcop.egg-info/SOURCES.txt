@@ -1,7 +1,7 @@
 README.md
 setup.py
+legcop/__init__.py
 legcop.egg-info/PKG-INFO
 legcop.egg-info/SOURCES.txt
 legcop.egg-info/dependency_links.txt
 legcop.egg-info/top_level.txt
-legiscan/__init__.py
