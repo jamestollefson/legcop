@@ -30,7 +30,7 @@ We interact with LegiScan using `LegiScan` objects.
 
 ```python
 #import
-from legcop.legiscan import LegiScan
+from legcop import LegiScan
 
 #instantiate LegiScan
 api_key = #YOUR API KEY HERE
