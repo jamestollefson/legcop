@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     
 setuptools.setup(
     name = "legcop",
-    version = "0.0.2",
+    version = "0.0.2.dev1",
     author = "James Tollefson",
     author_email = "james.l.tollefson@alaskaupdate.com",
     description = "API utilities to access legislative information from across the 54 U.S. States and Territories",
