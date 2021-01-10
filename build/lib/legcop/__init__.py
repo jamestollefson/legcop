@@ -82,6 +82,21 @@ class LegiScan(object):
         #return a list of the bills
         return [data['masterlist'][i] for i in data['masterlist']]
     
+    def get_master_list_raw(self, state=None, session_id=None):
+        """Get raw list of bills and their change hashes for a given session.
+        If the state abbreviation argument is provided, only the most current
+        session data for that state is returned"""
+        
+        if state is not None:
+            url = self._url('getMasterListRaw', {'state': state})
+        elif session_id is not None:
+            url = self._url('getMasterListRaw', {'id':session_id})
+        else:
+            raise ValueError('Must specify session identifier or state. Do not specify both. If you do only the state will be used in the resulting query')
+        data = self._get(url)
+        #return a list of the bills
+        return [data['masterlist'][i] for i in data['masterlist']]
+    
     def get_bill(self, bill_id=None, state=None, bill_number=None):
         """Get primary bill detail information including sponsors, committee
             references, full history, bill text, and roll call information.
