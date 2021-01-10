@@ -44,10 +44,11 @@ class LegiScanTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.legis.get_master_list()
             
-    def test_get_master_list_args(self):
-        """check that an exception is raised when no arguments are provided"""
+    def test_get_master_list_raw(self):
+        """check that exception is raised when neither state nor session_id
+        are provided"""
         with self.assertRaises(ValueError):
-            self.legis.get_master_list()
+            self.legis.get_master_list_raw()
             
     def test_get_bill_state_only(self):
         """check that ValueError is raised when only state is provided as an 
